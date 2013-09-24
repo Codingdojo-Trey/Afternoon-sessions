@@ -28,14 +28,14 @@ session_start();
 </head>
 <body>
 	<?php
-		if(isset($_SESSION['success']))
+		if(isset($_SESSION['message']))
 		{
-			echo $_SESSION['success'];
-			unset($_SESSION['success']);  
+			echo $_SESSION['message'];
+			unset($_SESSION['message']);  
 		}
 	?>
 	<form action = 'process.php' method = 'post'>
-		First name:	<input type = 'text' name = 'first_name'> <div class = 'fname_blank fname_number'></div>
+		First name:	<input type = 'text' name = 'first_name'> <div class = 'fname_blan---k fname_number'></div>
 		Last name: <input type = 'text' name = 'last_name'> <div class = 'lname_blank lname_number'></div>
 		Email address: <input type = 'text' name = 'email'> <div class = 'email'></div>
 		Password: <input class = 'pw 'type = 'password' name = 'password'> <div class = 'pw'></div>
@@ -43,6 +43,13 @@ session_start();
 		Birthday: <input type = 'date' name = 'DOB'> <div class = 'DOB'></div>
 		<input type = 'hidden' name = 'action' value = 'register'>
 		<input type = 'submit' value = 'Register!'> 
+	</form>
+
+	<form action= 'process.php' method = 'post'>
+		Email: <input type = 'text' name = 'email'>
+		Password: <input type = 'password' name = 'password'>
+		<input type = 'hidden' name = 'action' value = 'login'>
+		<input type = 'submit' value = 'login'>
 	</form>
 	<button>Show characters for password!</button>
 
